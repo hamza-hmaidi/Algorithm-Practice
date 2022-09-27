@@ -47,7 +47,22 @@ def longestPalindrome(s):
             r+=1
         s2=s[l+1:r]
         max = s2 if len(s2)> len(max) else max     
-    return max       
+    return max 
+def countSubstrings(s):
+    k=len(s)
+    for i in range(len(s)):
+        l,r=i-1,i+1
+        while(l>=0 and r<len(s) and s[l]==s[r]):
+            l-=1
+            r+=1
+            k+=1
+        l,r=i,i+1
+        while(l>=0 and r<len(s) and s[l]==s[r]):
+            l-=1
+            r+=1
+            k+=1   
+    return(k)         
+
 if __name__ == '__main__':
-    print(longestPalindrome('a'))        
+    print(countSubstrings('cabac'))        
 
