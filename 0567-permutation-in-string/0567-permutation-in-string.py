@@ -1,19 +1,15 @@
 class Solution:
+    
+    #check if 2 dictionary are equals
     def equalDic(self,dict1,dict2) -> bool:
         if len(dict1)!=len(dict2):
             return False
-     
-        else:
-
-            flag=0
-            for i in dict1:
-                if dict1.get(i)!=dict2.get(i):
-                    flag=1
-                    break
-            if flag==0:
-                return True
-            else:
+        for i in dict1:
+            if dict1.get(i)!=dict2.get(i):
                 return False
+        return True
+            
+            
     def checkInclusion(self, s1: str, s2: str) -> bool:
         if(len(s1)>len(s2)):
             return False
